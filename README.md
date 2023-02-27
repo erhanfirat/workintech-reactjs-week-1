@@ -1,3 +1,7 @@
+# Presentations
+
+- [Day 1](https://docs.google.com/presentation/d/1jT_qkD82j-fXrNLcUFoVJGBDezXB7lKaMdJcsHOhoj4/edit?usp=sharing)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
