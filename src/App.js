@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Counter from "./Counter";
+import "./App.css";
+
+// ROOT COMPONENT
+// ATOMIC DESIGN PATTERN
+// Hot Reload
+// JSX > JS Expression
 
 function App() {
+  const user = {
+    name: "Ali",
+    email: "ali@ali.com",
+  };
+  const [showCounter, setShowCounter] = useState(true);
+  let showCounterNotState = true;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Merhaba {user.name}!
+      <br />
+      <button
+        onClick={() => {
+          // setShowCounter(!showCounter);
+          showCounterNotState = !showCounterNotState;
+        }}
+      >
+        Toggle Counter
+      </button>
+      showCounter: {showCounterNotState ? "true" : "false"}
+      {showCounterNotState && <Counter />}
     </div>
   );
 }
