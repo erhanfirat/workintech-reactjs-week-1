@@ -1,6 +1,7 @@
 # Presentations
 
 - [Day 1](https://docs.google.com/presentation/d/1jT_qkD82j-fXrNLcUFoVJGBDezXB7lKaMdJcsHOhoj4/edit?usp=sharing)
+- [Day 2](https://docs.google.com/presentation/d/1-ncY6RBnNES9i4HLHAs1TDB5SQA3JQDqesW6J_Gj0AM/edit?usp=sharing)
 
 # Getting Started with Create React App
 
