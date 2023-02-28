@@ -1,6 +1,5 @@
-import { useState } from "react";
-import Counter from "./Counter";
 import "./App.css";
+import Layout from "./layout/Layout";
 
 // ROOT COMPONENT
 // ATOMIC DESIGN PATTERN
@@ -8,29 +7,7 @@ import "./App.css";
 // JSX > JS Expression
 
 function App() {
-  const user = {
-    name: "Ali",
-    email: "ali@ali.com",
-  };
-  const [showCounter, setShowCounter] = useState(true);
-  let showCounterNotState = true;
-
-  return (
-    <div className="App">
-      Merhaba {user.name}!
-      <br />
-      <button
-        onClick={() => {
-          // setShowCounter(!showCounter);
-          showCounterNotState = !showCounterNotState;
-        }}
-      >
-        Toggle Counter
-      </button>
-      showCounter: {showCounterNotState ? "true" : "false"}
-      {showCounterNotState && <Counter />}
-    </div>
-  );
+  return <Layout />;
 }
 
 export default App;

@@ -1,0 +1,17 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+}
+
+.side-bar {
+  width: 20%;
+}
+
+.page-content {
+  flex: 1;
+}
