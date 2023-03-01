@@ -1,10 +1,10 @@
-import { directive } from "@babel/types";
-import Main from "../views/Main";
+import MainPage from "../views/MainPage";
 import Greeting from "../components/Greeting";
-import "./Layout.css";
 import SideBar from "../components/SideBar";
+import ProductsPage from "../views/ProductsPage";
+import "./Layout.css";
 
-const Layout = () => {
+const Layout = (props) => {
   const user = {
     name: "Ali",
     surName: "Taş",
@@ -21,7 +21,9 @@ const Layout = () => {
           <SideBar />
         </div>
         <div className="page-content">
-          <Main />
+          <MainPage />
+          <hr />
+          <ProductsPage products={props.products} />
         </div>
       </div>
       <div className="footer">Footer</div>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Counter from "../components/Counter/Counter";
 
-const Main = () => {
+const MainPage = () => {
   const [showCounter, setShowCounter] = useState(true);
 
   return (
@@ -20,4 +20,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default MainPage;
