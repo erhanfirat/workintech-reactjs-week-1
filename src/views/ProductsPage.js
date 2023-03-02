@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Input } from "reactstrap";
 import Product from "../components/Product";
 
 const ProductsPage = (props) => {
@@ -8,6 +9,7 @@ const ProductsPage = (props) => {
   const filterInputChange = (e) => {
     setFilterText(e.target.value.trim());
   };
+
 
   useEffect(() => {
     setFilteredProducts(
@@ -23,8 +25,8 @@ const ProductsPage = (props) => {
   return (
     <div>
       Ürün sayısı: {props.products.length}
-      <input type="text" onChange={filterInputChange} />
-      <div className="products-container">
+      <Input type="text" onChange={filterInputChange} />
+      <div className="d-flex flex-wrap">
         {/*props.products
           .filter(
             (product) =>

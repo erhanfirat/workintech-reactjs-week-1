@@ -1,14 +1,32 @@
+import {
+  Card,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  CardText,
+  Button,
+} from "reactstrap";
 // props = { product}
 
 const Product = ({ product }) => {
   return (
-    <div className="product-item" key={product.id}>
-      <img src={product.img} />
-      <h3>{product.name}</h3>
-      <p>{product.description}</p>
-      <button>Sepete Ekle</button>
-      <a href="#">Favorilere Ekle</a>
-    </div>
+    <Card
+      style={{
+        width: "18rem",
+      }}
+      className="m-3 ms-0 mb-0"
+    >
+      <img alt="Sample" src={product.img} />
+      <CardBody>
+        <CardTitle tag="h5">{product.name}</CardTitle>
+        <CardSubtitle className="mb-2 text-muted" tag="h6">
+          {product.name}
+        </CardSubtitle>
+        <CardText>{product.description}</CardText>
+        <Button>Sepete Ekle</Button>
+        <Button>Favorilere Ekle</Button>
+      </CardBody>
+    </Card>
   );
 };
 

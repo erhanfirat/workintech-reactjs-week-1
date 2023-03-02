@@ -1,11 +1,31 @@
+import { Button } from "reactstrap";
+
 const CounterControls = (props) => {
   return (
     <div>
-      <button onClick={props.azalt}>Azalt</button>
-      <button onClick={props.reset}>Reset</button>
-      <button onClick={props.arttir}>Arttır</button>
-      <button onClick={props.setInitialCountValue}>Set Default Value</button>
-      <button onClick={props.setIncrementValue}>Set Increment Value</button>
+      <Button className="me-2" color="danger" onClick={props.azalt}>
+        Azalt
+      </Button>
+      <Button className="me-2" color="primary" onClick={props.reset}>
+        Reset
+      </Button>
+      <Button className="me-2" color="success" onClick={props.arttir}>
+        Arttır
+      </Button>
+      <Button
+        className="me-2"
+        color="primary"
+        onClick={props.setInitialCountValue}
+      >
+        Set Default Value
+      </Button>
+      <Button
+        className="me-2"
+        color="primary"
+        onClick={props.setIncrementValue}
+      >
+        Set Increment Value
+      </Button>
     </div>
   );
 };
