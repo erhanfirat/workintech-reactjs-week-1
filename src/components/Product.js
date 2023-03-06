@@ -6,6 +6,7 @@ import {
   CardText,
   Button,
 } from "reactstrap";
+import { Link } from "react-router-dom";
 // props = { product}
 
 const Product = ({ product }) => {
@@ -24,7 +25,7 @@ const Product = ({ product }) => {
         </CardSubtitle>
         <CardText>{product.description}</CardText>
         <Button>Sepete Ekle</Button>
-        <Button>Favorilere Ekle</Button>
+        <Link to={`/product-detail/${product.id}`}>Ürünü İncele</Link>
       </CardBody>
     </Card>
   );

@@ -1,22 +1,10 @@
-import { useState } from "react";
-import Counter from "../components/Counter/Counter";
+import PageTemplate from "./PageTemplate";
 
 const MainPage = () => {
-  const [showCounter, setShowCounter] = useState(true);
-
   return (
-    <div>
-      <br />
-      <button
-        onClick={() => {
-          setShowCounter(!showCounter);
-        }}
-      >
-        Toggle Counter
-      </button>
-      showCounter: {showCounter ? "true" : "false"}
-      {showCounter && <Counter />}
-    </div>
+    <PageTemplate title="Ana Sayfa">
+      React web auygulamama hoşgeldiniz.
+    </PageTemplate>
   );
 };
 

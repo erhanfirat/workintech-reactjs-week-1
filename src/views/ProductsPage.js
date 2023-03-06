@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Input } from "reactstrap";
+import { Breadcrumb, Input } from "reactstrap";
 import Product from "../components/Product";
+import PageTemplate from "./PageTemplate";
 
 const ProductsPage = (props) => {
   const [filterText, setFilterText] = useState("");
@@ -9,7 +10,6 @@ const ProductsPage = (props) => {
   const filterInputChange = (e) => {
     setFilterText(e.target.value.trim());
   };
-
 
   useEffect(() => {
     setFilteredProducts(
@@ -23,7 +23,7 @@ const ProductsPage = (props) => {
   }, [filterText, props.products]);
 
   return (
-    <div>
+    <PageTemplate title="Ürünler">
       Ürün sayısı: {props.products.length}
       <Input type="text" onChange={filterInputChange} />
       <div className="d-flex flex-wrap">
@@ -41,7 +41,7 @@ const ProductsPage = (props) => {
           <Product product={product} key={product.id} />
         ))}
       </div>
-    </div>
+    </PageTemplate>
   );
 };
 
