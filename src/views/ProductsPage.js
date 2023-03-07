@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Breadcrumb, Input } from "reactstrap";
+import { Link } from "react-router-dom";
+import { Breadcrumb, Button, Input } from "reactstrap";
 import Product from "../components/Product";
 import PageTemplate from "./PageTemplate";
 
@@ -24,8 +25,16 @@ const ProductsPage = (props) => {
 
   return (
     <PageTemplate title="Ürünler">
+      <Link to="/product-form" className="btn btn-primary me-2 mb-2">
+        <i className="fa-solid fa-plus me-2"></i>
+        Yeni Ürün Ekle
+      </Link>
       Ürün sayısı: {props.products.length}
-      <Input type="text" onChange={filterInputChange} />
+      <Input
+        type="text"
+        onChange={filterInputChange}
+        placeholder="Search in products..."
+      />
       <div className="d-flex flex-wrap">
         {/*props.products
           .filter(

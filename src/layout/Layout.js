@@ -6,6 +6,7 @@ import SideBar from "../components/SideBar";
 import ProductsPage from "../views/ProductsPage";
 import CounterPage from "../views/CounterPage";
 import ProductDetailPage from "../views/ProductDetailPage";
+import ProductFormPage from "../views/ProductFormPage";
 import NotFound from "../views/NotFound";
 
 import "./Layout.css";
@@ -38,6 +39,7 @@ const Layout = (props) => {
               path="/product-detail/:productId"
               element={<ProductDetailPage />}
             />
+            <Route path="/product-form" element={<ProductFormPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

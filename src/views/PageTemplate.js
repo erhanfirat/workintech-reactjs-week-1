@@ -8,7 +8,7 @@ const PageTemplate = ({ title, children }) => {
     <div className="p-3">
       <h1>
         <Button color="link" onClick={() => navigate(-1)}>
-          <i class="fa-solid fa-chevron-left"></i>
+          <i className="fa-solid fa-chevron-left"></i>
         </Button>{" "}
         {title}
       </h1>
