@@ -9,6 +9,11 @@ const ProductForm = () => {
     img: "",
     stock: 0,
   });
+  // todo: add err state of form
+  // todo: import yup
+  // todo: create form schema
+  // todo: change handlerlara err statei almak için güncelleme yapılmalı
+  // todo: Form inputlara invalid styling ve err mesajlarını eklemek
 
   const changeHandler = (e) => {
     setProduct({ ...product, [e.target.name]: e.target.value });

@@ -1,12 +1,11 @@
-import Login from "../components/Login";
-import ProductForm from "../components/ProductForm";
+import CreateUserForm from "../components/CreateUserForm";
 import PageTemplate from "./PageTemplate";
 
 const MainPage = () => {
   return (
     <PageTemplate title="Ana Sayfa">
       React web auygulamama hoşgeldiniz.
-      <Login />
+      <CreateUserForm />
     </PageTemplate>
   );
 };
