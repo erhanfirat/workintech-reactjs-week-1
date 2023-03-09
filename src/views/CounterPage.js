@@ -11,6 +11,7 @@ const CounterPage = () => {
         onClick={() => {
           setShowCounter(!showCounter);
         }}
+        data-test-id="toggle-counter"
       >
         Toggle Counter
       </button>

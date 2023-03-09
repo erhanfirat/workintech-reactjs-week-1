@@ -9,7 +9,7 @@ const CounterControls = (props) => {
       <Button className="me-2" color="primary" onClick={props.reset}>
         Reset
       </Button>
-      <Button className="me-2" color="success" onClick={props.arttir}>
+      <Button className="me-2" color="success" onClick={props.arttir} data-test-id="increase-button">
         Arttır
       </Button>
       <Button

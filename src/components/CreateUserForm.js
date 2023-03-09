@@ -107,9 +107,13 @@ const CreateUserForm = () => {
             className={
               userFormErrors.name ? "error border-red " : " border-black"
             }
+            data-test-id="name-input"
+            data-cy="name-input"
           />
           <FormFeedback>{userFormErrors.name}</FormFeedback>
-          {userFormErrors.name && <div className="text-small color-red">{userFormErrors.name}</div>}
+          {userFormErrors.name && (
+            <div className="text-small color-red">{userFormErrors.name}</div>
+          )}
         </FormGroup>
         <FormGroup>
           <Label for="user-mail">Email</Label>
@@ -163,6 +167,7 @@ const CreateUserForm = () => {
             onChange={checkboxChangeHandler}
             checked={userForm.above18}
             invalid={userFormErrors.above18}
+            data-test-id="above-18-checkbox"
           />
           <FormFeedback>{userFormErrors.above18}</FormFeedback>
         </FormGroup>

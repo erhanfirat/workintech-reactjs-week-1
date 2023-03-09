@@ -60,7 +60,7 @@ const Counter = (props) => {
 
   return (
     <div>
-      Counter: {count}
+      Counter: <span data-test-id="count-value-span">{count}</span>
       <CounterControls
         azalt={azalt}
         arttir={arttir}
