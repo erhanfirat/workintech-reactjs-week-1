@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { Route, Routes } from "react-router";
+import { ToastContainer, toast } from "react-toastify";
 
 import MainPage from "../views/MainPage";
 import Greeting from "../components/Greeting";
@@ -10,6 +12,7 @@ import ProductFormPage from "../views/ProductFormPage";
 import NotFound from "../views/NotFound";
 
 import "./Layout.css";
+import "react-toastify/dist/ReactToastify.css";
 
 const Layout = (props) => {
   const user = {
@@ -17,6 +20,10 @@ const Layout = (props) => {
     surName: "Taş",
     email: "ali@ali.com",
   };
+
+  useEffect(() => {
+    toast("E-ticaret uygulamama hoş geldiniz!");
+  }, []);
 
   return (
     <div className="main-container">
@@ -45,6 +52,7 @@ const Layout = (props) => {
         </div>
       </div>
       <div className="footer">Footer</div>
+      <ToastContainer />
     </div>
   );
 };
