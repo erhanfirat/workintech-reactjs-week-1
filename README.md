@@ -18,6 +18,8 @@
 
 - [Day 1](https://docs.google.com/presentation/d/1GA6U3JPSgzdI4qpxX7UGsGAnzhpuCIb0V5KuSAlI4Zg/edit?usp=sharing)
 
+Master içinde yapılan değişiklik
+
 test commiti
 
 test-branch içinde yapılan değişiklik
