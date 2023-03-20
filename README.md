@@ -20,6 +20,8 @@
 
 Master içinde yapılan değişiklik
 
+Master içinde başka bir commit
+
 test commiti
 
 test-branch içinde yapılan değişiklik
