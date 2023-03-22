@@ -12,23 +12,8 @@ import "./App.css";
 // JSX > JS Expression
 
 function App() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://620d69fb20ac3a4eedc05e3a.mockapi.io/api/products")
-      .then((res) => {
-        setProducts(res.data);
-      })
-      .catch((err) => {
-        console.error(
-          "Product data çekilirken bir hata ile karşılaşıldı > ",
-          err
-        );
-      });
-  }, []);
   
-  return <Layout products={products} />;
+  return <Layout />;
 }
 
 export default App;

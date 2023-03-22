@@ -23,6 +23,9 @@ const Layout = (props) => {
 
   useEffect(() => {
     toast("E-ticaret uygulamama hoş geldiniz!");
+    return () => {
+      localStorage.setItem("last-online", JSON.stringify(new Date()));
+    };
   }, []);
 
   return (
@@ -40,7 +43,7 @@ const Layout = (props) => {
             <Route path="/counter" element={<CounterPage />} />
             <Route
               path="/products"
-              element={<ProductsPage products={props.products} />}
+              element={<ProductsPage  />}
             />
             <Route
               path="/product-detail/:productId"
