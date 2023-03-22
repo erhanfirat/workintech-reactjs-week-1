@@ -1,27 +1,37 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Breadcrumb, Button, Input } from "reactstrap";
+import { Input, Spinner } from "reactstrap";
 import Product from "../components/Product";
+import useAxios from "../hooks/useAxios";
+import useInput from "../hooks/useInput";
 import PageTemplate from "./PageTemplate";
 
-const ProductsPage = (props) => {
-  const [filterText, setFilterText] = useState("");
-  const [filteredProducts, setFilteredProducts] = useState(props.products);
+const productsEndpoint =
+  "https://620d69fb20ac3a4eedc05e3a.mockapi.io/api/products654";
 
-  const filterInputChange = (e) => {
-    setFilterText(e.target.value.trim());
-  };
+const ProductsPage = (props) => {
+  const [getProducts, products, productsLoading, productsError] = useAxios(
+    [],
+    productsEndpoint,
+    "get"
+  );
+  const [filterText, filterInputChange] = useInput("");
+  const [filteredProducts, setFilteredProducts] = useState(products);
 
   useEffect(() => {
     setFilteredProducts(
-      props.products.filter(
+      products.filter(
         (product) =>
           product.name
             .toLocaleLowerCase()
             .indexOf(filterText.toLocaleLowerCase()) >= 0
       )
     );
-  }, [filterText, props.products]);
+  }, [filterText, products]);
+
+  useEffect(() => {
+    getProducts();
+  }, []);
 
   return (
     <PageTemplate title="Ürünler">
@@ -29,14 +39,14 @@ const ProductsPage = (props) => {
         <i className="fa-solid fa-plus me-2"></i>
         Yeni Ürün Ekle
       </Link>
-      Ürün sayısı: {props.products.length}
+      Ürün sayısı: {products.length}
       <Input
         type="text"
         onChange={filterInputChange}
         placeholder="Search in products..."
       />
       <div className="d-flex flex-wrap">
-        {/*props.products
+        {/*products
           .filter(
             (product) =>
               product.name.toLowerCase().indexOf(filterText.toLowerCase()) >= 0
@@ -46,9 +56,11 @@ const ProductsPage = (props) => {
         ))
           */}
 
-        {filteredProducts.map((product) => (
-          <Product product={product} key={product.id} />
-        ))}
+        {!productsLoading &&
+          filteredProducts.map((product) => (
+            <Product product={product} key={product.id} />
+          ))}
+        {productsLoading && <Spinner>Loading...</Spinner>}
       </div>
     </PageTemplate>
   );
