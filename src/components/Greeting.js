@@ -19,22 +19,20 @@ const Greeting = (props) => {
 
   return (
     <div>
-      {userName && <h3>Merhaba {userName}</h3>}
-      {!userName && (
-        <form onSubmit={userNameSubmit}>
-          <label htmlFor="input-user-name">
-            Lütfen size hitap etmek istediğim ismi giriniz...
-          </label>
-          <input
-            id="input-user-name"
-            type="text"
-            placeholder="İsminiz"
-            value={userNameInput}
-            onChange={usernameChangeHandler}
-          />
-          <button type="submit">Submit</button>
-        </form>
-      )}
+      <h3>
+        Merhaba {userName}
+        {!userName && (
+          <form onSubmit={userNameSubmit} style={{ display: "inline" }}>
+            <input
+              id="input-user-name"
+              type="text"
+              placeholder="Size nasıl hitap etmemi istersiniz?"
+              value={userNameInput}
+              onChange={usernameChangeHandler}
+            />
+          </form>
+        )}
+      </h3>
     </div>
   );
 };

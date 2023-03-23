@@ -18,7 +18,7 @@ const LoginWithRHF = () => {
     <div className="login-form p-3 border border-primary-subtle rounded shadow ">
       <h2 className="text-primary">Login Form</h2>
       <form onSubmit={handleSubmit(doLoginUSer)}>
-        <label for="user-name">Name</label>
+        <label htmlFor="user-name">Name</label>
         <input
           type="name"
           name="name"
@@ -29,7 +29,7 @@ const LoginWithRHF = () => {
           <div className="form-error text-danger"> * {errors.name.message}</div>
         )}
         <br />
-        <label for="user-mail">Email</label>
+        <label htmlFor="user-mail">Email</label>
         <input
           type="email"
           name="email"
@@ -38,7 +38,7 @@ const LoginWithRHF = () => {
           {...register("email")}
         />
         <br />
-        <label for="user-pass">Password</label>
+        <label htmlFor="user-pass">Password</label>
         <input
           type="password"
           name="password"
@@ -46,7 +46,7 @@ const LoginWithRHF = () => {
           {...register("password")}
         />
         <br />
-        <label check>
+        <label>
           <input
             type="checkbox"
             name="keepMeSignedIn"
