@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Counter from "../components/Counter/Counter";
+import CounterWithUseReducer from "../components/Counter/CounterWithUseReducer";
 import PageTemplate from "./PageTemplate";
 
 const CounterPage = () => {
@@ -17,6 +18,9 @@ const CounterPage = () => {
       </button>
       showCounter: {showCounter ? "true" : "false"}
       {showCounter && <Counter />}
+      <hr />
+      <h2>Counter With useReducer</h2>
+      <CounterWithUseReducer />
     </PageTemplate>
   );
 };

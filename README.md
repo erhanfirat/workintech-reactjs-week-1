@@ -21,6 +21,10 @@
 - [Day 3](https://docs.google.com/presentation/d/1RfFpRYKNImJ_Jf-WGTKn74islfvpPF8JzbYNqcPVoIM/edit?usp=sharing)
 - [Day 4](https://docs.google.com/presentation/d/1p1kGv0E98-iVaDhx7a6s_K7spFyLnpaLFQqwZGaNj44/edit?usp=sharing)
 
+## Sprint 10
+
+- [Day 1](https://docs.google.com/presentation/d/18m8bHSBz8JTNNTCLJ3XqJep8gHcWC5IDn9pSK7Xe--Q/edit?usp=sharing)
+
 Master içinde yapılan değişiklik
 
 Master içinde başka bir commit
