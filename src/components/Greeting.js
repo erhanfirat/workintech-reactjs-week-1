@@ -1,12 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import useInput from "../hooks/useInput";
 import useLocalStorage from "../hooks/useLocalStorage";
+import { updateTitleAction } from "../store/actions/actions";
 
 const Greeting = (props) => {
   const [userName, setUserName] = useLocalStorage("user-name", "");
   // const [userNameInput, setUserNameInput] = useState("");
   const [userNameInput, usernameChangeHandler] = useInput("");
   const [emailInput, emailChangeHandler] = useInput("");
+  const title = useSelector((store) => store.titleState.title);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     // axios.post("https://mockworker.com/login", { user: "asd", pass: "asd" });
@@ -15,6 +19,7 @@ const Greeting = (props) => {
   const userNameSubmit = (e) => {
     e.preventDefault();
     setUserName(userNameInput);
+    dispatch(updateTitleAction(`Merhaba ${userNameInput}!`));
   };
 
   return (
@@ -33,6 +38,8 @@ const Greeting = (props) => {
           </form>
         )}
       </h3>
+      <hr />
+      <h4>Data from redux store: {title}</h4>
     </div>
   );
 };

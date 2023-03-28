@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import CounterControls from "./CounterControls";
 import "./Counter.css";
+import { useSelector } from "react-redux";
 
 const Counter = (props) => {
   // state
   const [initialCount, setInitialCount] = useState(50);
   const [increment, setIncrement] = useState(10);
   const [count, setCount] = useState(initialCount);
+  const title = useSelector((store) => store.titleState.title);
 
   // useEffect(() => {
   //   console.log(`Increment value updated to: ${increment}`);
@@ -69,6 +71,8 @@ const Counter = (props) => {
         setInitialCountValue={setInitialCountValue}
       />
       {count === 100 ? <div>OLEEYYY!!! We reached to 100.</div> : ""}
+      <hr />
+      redux store title: {title}
     </div>
   );
 };

@@ -24,6 +24,7 @@
 ## Sprint 10
 
 - [Day 1](https://docs.google.com/presentation/d/18m8bHSBz8JTNNTCLJ3XqJep8gHcWC5IDn9pSK7Xe--Q/edit?usp=sharing)
+- [Day 2](https://docs.google.com/presentation/d/1EwQNvl7eKyiHXgsPfkpk_Ld7vrNcncAovvwkUxXn_hI/edit?usp=sharing)
 
 Master içinde yapılan değişiklik
 
