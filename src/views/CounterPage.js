@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Counter from "../components/Counter/Counter";
+import CounterWithRedux from "../components/Counter/CounterWithRedux";
 import CounterWithUseReducer from "../components/Counter/CounterWithUseReducer";
 import PageTemplate from "./PageTemplate";
 
@@ -21,6 +22,9 @@ const CounterPage = () => {
       <hr />
       <h2>Counter With useReducer</h2>
       <CounterWithUseReducer />
+      <hr />
+      <h2>Counter With Redux</h2>
+      <CounterWithRedux />
     </PageTemplate>
   );
 };

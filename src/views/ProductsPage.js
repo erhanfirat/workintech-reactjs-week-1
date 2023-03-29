@@ -7,7 +7,7 @@ import useInput from "../hooks/useInput";
 import PageTemplate from "./PageTemplate";
 
 const productsEndpoint =
-  "https://620d69fb20ac3a4eedc05e3a.mockapi.io/api/products654";
+  "https://620d69fb20ac3a4eedc05e3a.mockapi.io/api/products";
 
 const ProductsPage = (props) => {
   const [getProducts, products, productsLoading, productsError] = useAxios(
