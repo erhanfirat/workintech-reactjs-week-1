@@ -26,6 +26,7 @@
 - [Day 1](https://docs.google.com/presentation/d/18m8bHSBz8JTNNTCLJ3XqJep8gHcWC5IDn9pSK7Xe--Q/edit?usp=sharing)
 - [Day 2](https://docs.google.com/presentation/d/1EwQNvl7eKyiHXgsPfkpk_Ld7vrNcncAovvwkUxXn_hI/edit?usp=sharing)
 - [Day 3](https://docs.google.com/presentation/d/1MvlUHuOIFKsgBQPoR4tbfKVI6_uA3TdwCLqbbAmnIHk/edit?usp=sharing)
+- [Day 4](https://docs.google.com/presentation/d/1FntG2JFe6h532JgwUBkjQEdk3XEgoklxuMVppTviyaQ/edit?usp=sharing)
 
 Master içinde yapılan değişiklik
 

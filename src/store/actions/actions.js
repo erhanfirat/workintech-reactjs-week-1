@@ -1,4 +1,6 @@
+import axios from "axios";
 import { COUNTER_ACTIONS } from "../reducers/counterReducer";
+import { PRODUCT_ACTIONS } from "../reducers/productsReducer";
 import { TITLE_ACTIONS } from "../reducers/titleReducer";
 
 export const updateTitleAction = (title) => ({
@@ -22,3 +24,26 @@ export const countAssignAction = (payload) => ({
   type: COUNTER_ACTIONS.assign,
   payload,
 });
+
+// PORODUCST ACTIONS
+
+const productsEndpoint =
+  "https://620d69fb20ac3a4eedc05e3a.mockapi.io/api/products";
+
+export const getProductsActionCreator = () => (dispatch) => {
+  dispatch({ type: PRODUCT_ACTIONS.fetchStart });
+  axios
+    .get(productsEndpoint)
+    .then((res) =>
+      dispatch({
+        type: PRODUCT_ACTIONS.fetchSuccess,
+        payload: res.data,
+      })
+    )
+    .catch((err) =>
+      dispatch({
+        type: PRODUCT_ACTIONS.fetchError,
+        payload: err.message,
+      })
+    );
+};

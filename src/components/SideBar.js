@@ -23,6 +23,12 @@ const SideBar = () => {
         Ürünler
       </NavLink>
       <NavLink
+        to="/products-redux"
+        style={({ isActive }) => (isActive ? activeStyling : null)}
+      >
+        Ürünler (Redux)
+      </NavLink>
+      <NavLink
         to="/counter"
         style={({ isActive }) => (isActive ? activeStyling : null)}
       >

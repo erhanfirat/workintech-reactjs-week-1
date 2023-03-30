@@ -17,6 +17,7 @@
     "reactstrap": "^9.1.6",
     "redux": "^4.2.1",
     "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.2",
     "web-vitals": "^2.1.4",
     "yup": "^1.0.2"
   },

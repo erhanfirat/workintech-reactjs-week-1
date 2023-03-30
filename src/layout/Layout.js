@@ -13,6 +13,7 @@ import NotFound from "../views/NotFound";
 
 import "./Layout.css";
 import "react-toastify/dist/ReactToastify.css";
+import ProductsPageRedux from "../views/ProductsPageRedux";
 
 const Layout = (props) => {
   const user = {
@@ -41,10 +42,8 @@ const Layout = (props) => {
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/counter" element={<CounterPage />} />
-            <Route
-              path="/products"
-              element={<ProductsPage  />}
-            />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/products-redux" element={<ProductsPageRedux />} />
             <Route
               path="/product-detail/:productId"
               element={<ProductDetailPage />}
