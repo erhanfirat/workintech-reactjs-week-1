@@ -1,22 +1,29 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Input, Spinner } from "reactstrap";
+import { useSelector, useDispatch } from "react-redux";
+
 import Product from "../components/Product";
-import useAxios from "../hooks/useAxios";
 import useInput from "../hooks/useInput";
+import { getProductsActionCreator } from "../store/actions/actions";
 import PageTemplate from "./PageTemplate";
 
 const productsEndpoint =
   "https://620d69fb20ac3a4eedc05e3a.mockapi.io/api/products";
 
 const ProductsPage = (props) => {
-  const [getProducts, products, productsLoading, productsError] = useAxios(
-    [],
-    productsEndpoint,
-    "get"
+  // const [getProducts, products, productsLoading, productsError] = useAxios(
+  //   [],
+  //   productsEndpoint,
+  //   "get"
+  // );
+  const products = useSelector((state) => state.productsState.products);
+  const productsLoading = useSelector(
+    (state) => state.productsState.isFetching
   );
   const [filterText, filterInputChange] = useInput("");
   const [filteredProducts, setFilteredProducts] = useState(products);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setFilteredProducts(
@@ -30,7 +37,7 @@ const ProductsPage = (props) => {
   }, [filterText, products]);
 
   useEffect(() => {
-    getProducts();
+    !products.length && dispatch(getProductsActionCreator());
   }, []);
 
   return (
