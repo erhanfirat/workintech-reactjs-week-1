@@ -6,6 +6,8 @@ import { store } from "./store/store";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
+import CounterProvider from "./context/CounterProvider";
+import SideBarProvider from "./context/SideBarProvider";
 
 if (process.env.NODE_ENV === "development") {
   const { worker } = require("./mocks/browser");
@@ -17,7 +19,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <CounterProvider>
+        <SideBarProvider>
+          <App />
+        </SideBarProvider>
+      </CounterProvider>
     </BrowserRouter>
   </Provider>
 );

@@ -10,10 +10,11 @@ import CounterPage from "../views/CounterPage";
 import ProductDetailPage from "../views/ProductDetailPage";
 import ProductFormPage from "../views/ProductFormPage";
 import NotFound from "../views/NotFound";
+import ProductsPageRedux from "../views/ProductsPageRedux";
+import CounterPageContext from "../views/CounterPageContext";
 
 import "./Layout.css";
 import "react-toastify/dist/ReactToastify.css";
-import ProductsPageRedux from "../views/ProductsPageRedux";
 
 const Layout = (props) => {
   const user = {
@@ -42,6 +43,7 @@ const Layout = (props) => {
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/counter" element={<CounterPage />} />
+            <Route path="/counter-context" element={<CounterPageContext />} />
             <Route path="/products" element={<ProductsPage />} />
             <Route path="/products-redux" element={<ProductsPageRedux />} />
             <Route

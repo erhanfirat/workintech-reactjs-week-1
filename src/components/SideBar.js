@@ -1,4 +1,7 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { ButtonGroup, Button } from "reactstrap";
+import { SideBarContext } from "../context/SideBarProvider";
 import "./SideBar.css";
 
 const activeStyling = {
@@ -7,36 +10,35 @@ const activeStyling = {
 };
 
 const SideBar = () => {
+  const { menuList, theme, setTheme } = useContext(SideBarContext);
   return (
     <div className="side-bar-comp">
       <img src="" />
-      <NavLink
-        to="/"
-        style={({ isActive }) => (isActive ? activeStyling : null)}
-      >
-        Ana Sayfa
-      </NavLink>
-      <NavLink
-        to="/products"
-        style={({ isActive }) => (isActive ? activeStyling : null)}
-      >
-        Ürünler
-      </NavLink>
-      <NavLink
-        to="/products-redux"
-        style={({ isActive }) => (isActive ? activeStyling : null)}
-      >
-        Ürünler (Redux)
-      </NavLink>
-      <NavLink
-        to="/counter"
-        style={({ isActive }) => (isActive ? activeStyling : null)}
-      >
-        Sayaç
-      </NavLink>
-      {/* <a href="#">Sepetim</a>
-      <a href="#">Biz Kimiz?</a>
-      <a href="#">İletişim</a> */}
+      {menuList.map((menuItem) => (
+        <NavLink
+          to={menuItem.path}
+          style={({ isActive }) => (isActive ? activeStyling : null)}
+        >
+          {menuItem.title}
+        </NavLink>
+      ))}
+      <br />
+      <ButtonGroup>
+        <Button
+          color="primary"
+          onClick={() => setTheme("light")}
+          active={theme === "light"}
+        >
+          Light
+        </Button>
+        <Button
+          color="primary"
+          onClick={() => setTheme("dark")}
+          active={theme === "dark"}
+        >
+          Dark
+        </Button>
+      </ButtonGroup>
     </div>
   );
 };
