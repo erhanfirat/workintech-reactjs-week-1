@@ -6,6 +6,7 @@ import { store } from "./store/store";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
+import CounterProvider from "./context/CounterContext";
 
 if (process.env.NODE_ENV === "development") {
   const { worker } = require("./mocks/browser");
@@ -15,11 +16,13 @@ if (process.env.NODE_ENV === "development") {
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // BrowserRoute provider of routing in react js
 root.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>
+  <CounterProvider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  </CounterProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
