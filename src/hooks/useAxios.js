@@ -2,14 +2,14 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { axiosApi } from "../api/api";
 
-const useAxios = (initialValue, endpoint, reqType, param) => {
+const useAxios = (initialValue, endpoint, reqType) => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(initialValue);
   const [error, setError] = useState();
 
-  const doRequest = () => {
+  const doRequest = (reqData) => {
     setLoading(true);
-    axiosApi[reqType](endpoint, param)
+    axiosApi[reqType](endpoint, reqData)
       .then((res) => {
         setData(res.data);
         setError(null);
