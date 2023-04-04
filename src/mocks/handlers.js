@@ -9,7 +9,8 @@ export const handlers = [
       // Respond with a 200 status code
       ctx.status(200),
       ctx.json({
-        authentication: "bGjSkeMxKxRp5mfKSLgH0g7UOJYFlwvI",
+        token:
+          "kd8hVmOk=WTY5Rh9NGgw-tts7LQx6i-!zhFEBu64IpRQ2jqtDaiPpgMiqaNLa?qY",
         isAdmin: true,
       })
     );

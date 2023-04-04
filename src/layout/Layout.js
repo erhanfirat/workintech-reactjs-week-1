@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Route, Routes } from "react-router";
+import { Navigate, Route, Routes } from "react-router";
 import { ToastContainer, toast } from "react-toastify";
 
 import MainPage from "../views/MainPage";
@@ -51,6 +51,12 @@ const Layout = (props) => {
               element={<ProductDetailPage />}
             />
             <Route path="/product-form" element={<ProductFormPage />} />
+            <Route
+              path="/my-page"
+              element={
+                localStorage.getItem("token") ? <MyPage /> : <Navigate to="/login" replace />
+              }
+            />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
