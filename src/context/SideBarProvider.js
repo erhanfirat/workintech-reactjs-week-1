@@ -24,6 +24,10 @@ const SideBarProvider = ({ children }) => {
       path: "/counter-context",
       title: "Sayaç Context API",
     },
+    {
+      path: "/my-page",
+      title: "My Page",
+    },
   ];
   const [theme, setTheme] = useState("light"); // light | dark
   return (

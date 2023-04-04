@@ -18,6 +18,7 @@ const SideBar = () => {
         <NavLink
           to={menuItem.path}
           style={({ isActive }) => (isActive ? activeStyling : null)}
+          key={menuItem.path}
         >
           {menuItem.title}
         </NavLink>

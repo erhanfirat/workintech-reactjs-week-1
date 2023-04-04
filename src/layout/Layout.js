@@ -1,8 +1,9 @@
 import { useEffect } from "react";
-import { Route, Routes } from "react-router";
+import { Navigate, Route, Routes } from "react-router";
 import { ToastContainer, toast } from "react-toastify";
 
 import MainPage from "../views/MainPage";
+import MyPage from "../views/MyPage";
 import Greeting from "../components/Greeting";
 import SideBar from "../components/SideBar";
 import ProductsPage from "../views/ProductsPage";
@@ -12,9 +13,11 @@ import ProductFormPage from "../views/ProductFormPage";
 import NotFound from "../views/NotFound";
 import ProductsPageRedux from "../views/ProductsPageRedux";
 import CounterPageContext from "../views/CounterPageContext";
+import LoginPage from "../views/LoginPage";
 
 import "./Layout.css";
 import "react-toastify/dist/ReactToastify.css";
+import ProtectedPage from "../components/ProtectedPage";
 
 const Layout = (props) => {
   const user = {
@@ -51,6 +54,11 @@ const Layout = (props) => {
               element={<ProductDetailPage />}
             />
             <Route path="/product-form" element={<ProductFormPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route
+              path="/my-page"
+              element={<ProtectedPage pageComponent={MyPage} />}
+            />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

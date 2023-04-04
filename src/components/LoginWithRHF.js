@@ -1,5 +1,8 @@
 import { useForm } from "react-hook-form";
-import { Form, FormGroup, Input, Label, Button } from "reactstrap";
+import useAxios from "../hooks/useAxios";
+import { useEffect } from "react";
+import { axiosApi } from "../api/api";
+import { useNavigate } from "react-router";
 
 const LoginWithRHF = () => {
   const {
@@ -10,9 +13,35 @@ const LoginWithRHF = () => {
     defaultValues: { name: "", email: "", password: "", keepMeSignedIn: true },
   });
 
+  const navigate = useNavigate();
+
+  const [loginUser, resData, loading, resErr] = useAxios(
+    null,
+    "login",
+    "post",
+    {
+      username: "ali",
+      password: "123456",
+    }
+  );
+
   const doLoginUSer = (loginFormData) => {
     console.log("loginFormData > ", loginFormData);
+    loginUser();
   };
+
+  useEffect(() => {
+    console.log("login resData > ", resData);
+    if (resData?.token) {
+      localStorage.setItem("token", resData.token);
+      axiosApi.defaults.headers.common[
+        "Authorization"
+      ] = `Bearer ${resData.token}`;
+      // axiosApi.get("products").then((res) => console.log(res));
+      console.log(axiosApi);
+      navigate("/");
+    }
+  }, [resData]);
 
   return (
     <div className="login-form p-3 border border-primary-subtle rounded shadow ">

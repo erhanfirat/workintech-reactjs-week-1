@@ -1,6 +1,6 @@
-import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { axiosApi } from "../api/api";
 
 const useAxios = (initialValue, endpoint, reqType, param) => {
   const [loading, setLoading] = useState(false);
@@ -9,7 +9,7 @@ const useAxios = (initialValue, endpoint, reqType, param) => {
 
   const doRequest = () => {
     setLoading(true);
-    axios[reqType](endpoint, param)
+    axiosApi[reqType](endpoint, param)
       .then((res) => {
         setData(res.data);
         setError(null);
