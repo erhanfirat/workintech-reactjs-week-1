@@ -31,6 +31,7 @@
 ## Sprint 11
 
 - [Day 1](https://docs.google.com/presentation/d/10Sy9y8FmVPVeMCbzMaPuU1MEtPczNs-ZZ8FuKPtH03g/edit?usp=sharing)
+- [Day 2](https://docs.google.com/presentation/d/1BTxuHjc_l5IACNWTq9bd3gChj9T6yxGL2qqIjitRHKs/edit?usp=sharing)
 
 Master içinde yapılan değişiklik
 
