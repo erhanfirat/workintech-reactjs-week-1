@@ -53,7 +53,7 @@ const Layout = (props) => {
               path="/product-detail/:productId"
               element={<ProductDetailPage />}
             />
-            <Route path="/product-form" element={<ProductFormPage />} />
+            <Route path="/product-form/:id?" element={<ProductFormPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route
               path="/my-page"

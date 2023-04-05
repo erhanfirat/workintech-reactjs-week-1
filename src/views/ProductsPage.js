@@ -2,19 +2,13 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Input, Spinner } from "reactstrap";
 import Product from "../components/Product";
-import useAxios from "../hooks/useAxios";
+import useAxios, { REQ_TYPES } from "../hooks/useAxios";
 import useInput from "../hooks/useInput";
 import PageTemplate from "./PageTemplate";
-
-const productsEndpoint =
-  "https://620d69fb20ac3a4eedc05e3a.mockapi.io/api/products";
+import { getProductsParams } from "../api/endpoints";
 
 const ProductsPage = (props) => {
-  const [getProducts, products, productsLoading, productsError] = useAxios(
-    [],
-    productsEndpoint,
-    "get"
-  );
+  const [getProducts, products, productsLoading] = useAxios([]);
   const [filterText, filterInputChange] = useInput("");
   const [filteredProducts, setFilteredProducts] = useState(products);
 
@@ -30,7 +24,7 @@ const ProductsPage = (props) => {
   }, [filterText, products]);
 
   useEffect(() => {
-    getProducts();
+    getProducts(getProductsParams());
   }, []);
 
   return (

@@ -1,14 +1,22 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { Form, FormGroup, Input, Label, Button } from "reactstrap";
+import { Form, FormGroup, Input, Label, Button, Alert } from "reactstrap";
+import useAxios, { REQ_TYPES } from "../hooks/useAxios";
+import {
+  getProductParams,
+  createProductParams,
+  updateProductParams,
+} from "../api/endpoints";
 
-const ProductForm = () => {
+const ProductForm = ({ productId }) => {
   const [product, setProduct] = useState({
     name: "",
     description: "",
     img: "",
     stock: 0,
   });
+  const [saveProduct, createProRes, createProLoading] = useAxios();
+  const [getProduct, getProRes] = useAxios();
+
   // todo: add err state of form
   // todo: import yup
   // todo: create form schema
@@ -21,19 +29,29 @@ const ProductForm = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    axios
-      .post("https://620d69fb20ac3a4eedc05e3a.mockapi.io/api/products", product)
-      .then((res) => {
-        console.log("res data  > ", res.data);
-        if (res.status == "SUCCESS") {
-          // navigate to products
-        }
-      });
+    if (product.id) {
+      saveProduct(updateProductParams(product));
+    } else {
+      saveProduct(createProductParams(product));
+    }
   };
 
   useEffect(() => {
     console.log("product > ", product);
   }, [product]);
+
+  useEffect(() => {
+    if (productId) {
+      // get req product data çekeceğiz
+      getProduct(getProductParams(productId))
+        .then((productData) => {
+          setProduct(productData);
+        })
+        .catch((err) => {
+          alert(productId + " id'sine sahip bir kayıt bulunamadı.");
+        });
+    }
+  }, []);
 
   return (
     <Form onSubmit={submitHandler}>

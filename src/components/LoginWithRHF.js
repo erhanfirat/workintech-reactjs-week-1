@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import useAxios from "../hooks/useAxios";
+import useAxios, { REQ_TYPES } from "../hooks/useAxios";
 import { useEffect } from "react";
 import { axiosApi } from "../api/api";
 import { useNavigate } from "react-router";
@@ -15,7 +15,15 @@ const LoginWithRHF = () => {
 
   const navigate = useNavigate();
 
-  const [loginUser, resData, loading, resErr] = useAxios(null, "login", "post");
+  const [loginUser, resData, loading, resErr] = useAxios({
+    endpoint: "login",
+    reqType: REQ_TYPES.POST,
+  });
+
+  const [loginUser1, resData1, loading1, resErr1] = useAxios({
+    endpoint: "login",
+    reqType: "post",
+  });
 
   const doLoginUSer = (loginFormData) => {
     console.log("loginFormData > ", loginFormData);
