@@ -20,3 +20,13 @@ store = {
     }
 }
 */
+
+
+/***
+ * Store Data Struture: 
+ * { 
+ *  titleState: { 
+ *      title: String
+ *  }
+ * }
+ */

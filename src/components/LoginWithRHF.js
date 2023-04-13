@@ -8,26 +8,24 @@ const LoginWithRHF = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({
     defaultValues: { username: "", password: "", keepMeSignedIn: true },
   });
 
   const navigate = useNavigate();
 
-  const [loginUser, resData, loading, resErr] = useAxios({
-    endpoint: "login",
-    reqType: REQ_TYPES.POST,
-  });
-
-  const [loginUser1, resData1, loading1, resErr1] = useAxios({
-    endpoint: "login",
-    reqType: "post",
-  });
+  const [loginUser, resData, loading, resErr] = useAxios();
 
   const doLoginUSer = (loginFormData) => {
     console.log("loginFormData > ", loginFormData);
-    loginUser(loginFormData);
+    loginUser({
+      endpoint: "login",
+      reqType: REQ_TYPES.POST,
+      payload: loginFormData,
+    }).then(resDt => {
+      // res
+    });
   };
 
   useEffect(() => {
@@ -52,8 +50,11 @@ const LoginWithRHF = () => {
           type="email"
           id="user-mail"
           placeholder="abc@abc.com"
-          {...register("username")}
+          {...register("username", {
+            required: { value: true, message: "Zorunlu!" },
+          })}
         />
+        {errors.username && <p className="text-danger">Bu alan zorunludur!</p>}
         <br />
         <label htmlFor="user-pass">Password</label>
         <input
@@ -73,7 +74,9 @@ const LoginWithRHF = () => {
           Keep me signed in
         </label>
         <br />
-        <button type="submit">Login</button>
+        <button type="submit" disabled={!isValid}>
+          Login
+        </button>
       </form>
     </div>
   );

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { axiosApi } from "../api/api";
-import axios from "axios";
 
 // enum
 export const REQ_TYPES = Object.freeze({
@@ -26,6 +25,13 @@ const useAxios = (initialValue = null) => {
     payload,
     config,
   }) => {
+    /**
+     * axios.get(endpoint, config?)
+     * axios.post(endpoint, payload, config?)
+     * axios.put(endpoint, payload, config?)
+     * axios.delete(endpoint, config?)
+     */
+
     setLoading(true);
     return axiosApi[reqType](endpoint, payload, config)
       .then((res) => {

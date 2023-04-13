@@ -24,7 +24,9 @@ const ProductsPage = (props) => {
   }, [filterText, products]);
 
   useEffect(() => {
-    getProducts(getProductsParams());
+    getProducts(getProductsParams()).then((resData) => {
+      console.log("resData > ", resData);
+    });
   }, []);
 
   return (

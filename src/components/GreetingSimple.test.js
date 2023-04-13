@@ -11,5 +11,5 @@ test("renders greeting on Greeting component", async () => {
   screen.debug();
 
   // Assert
-  // expect(greeting).toBeInTheDocument();
+  expect(greeting).toBeInTheDocument();
 });
