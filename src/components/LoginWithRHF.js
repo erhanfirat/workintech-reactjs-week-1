@@ -15,7 +15,7 @@ const LoginWithRHF = () => {
 
   const navigate = useNavigate();
 
-  const [loginUser, resData, loading, resErr] = useAxios();
+  const [loginUser, resData] = useAxios();
 
   const doLoginUSer = (loginFormData) => {
     console.log("loginFormData > ", loginFormData);
@@ -23,7 +23,7 @@ const LoginWithRHF = () => {
       endpoint: "login",
       reqType: REQ_TYPES.POST,
       payload: loginFormData,
-    }).then(resDt => {
+    }).then(() => {
       // res
     });
   };

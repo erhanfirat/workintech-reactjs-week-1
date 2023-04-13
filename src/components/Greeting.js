@@ -8,7 +8,6 @@ const Greeting = (props) => {
   const [userName, setUserName] = useLocalStorage("user-name", "");
   // const [userNameInput, setUserNameInput] = useState("");
   const [userNameInput, usernameChangeHandler] = useInput("");
-  const [emailInput, emailChangeHandler] = useInput("");
   const title = useSelector((store) => store.titleState.title);
   const dispatch = useDispatch();
 
